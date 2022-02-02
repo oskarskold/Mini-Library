@@ -14,12 +14,12 @@ export default {
 
 <style scoped>
 h2 {
-  font-size: 1rem;
-  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  margin: 2rem 1rem 0 1rem;
 }
 h4 {
   font-size: 0.6rem;
-  margin-left: 1rem;
+  margin: 1rem;
 }
 .book {
   color: white;

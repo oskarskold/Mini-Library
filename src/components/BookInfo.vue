@@ -9,13 +9,13 @@
       <p>Pages: {{ book.Pages }}</p>
       <p>Publisher: {{ book.Publisher }}</p>
     </div>
-    <router-link to="/" tag="button">Oh, I want to read it!</router-link>
+    <router-link to="/List" tag="button">Oh, I want to read it!</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["book"],
+  props: ["book", "readingList"],
 };
 </script>
 

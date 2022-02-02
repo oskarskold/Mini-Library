@@ -5,10 +5,15 @@
         arrow_circle_left
       </span></router-link
     >
-    <Book class="book" v-if="data" :book="data">
-      {{ data }}
+    <Book class="book" v-if="book" :book="book">
+      {{ book }}
     </Book>
-    <BookInfo class="book-info" v-if="data" :book="data" />
+    <BookInfo
+      class="book-info"
+      v-if="book"
+      :book="book"
+      :readingList="readingList"
+    />
   </div>
 </template>
 
@@ -18,8 +23,13 @@ import BookInfo from "../components/BookInfo.vue";
 import ChildrensBooks from "../ChildrensBooks.json";
 export default {
   components: { Book, BookInfo },
+  data() {
+    return {
+      readingList: [],
+    };
+  },
   computed: {
-    data() {
+    book() {
       return ChildrensBooks.find(
         (data) => data.Productid == this.$route.params.id
       );
@@ -61,13 +71,13 @@ input[type="reset"] {
   grid-area: back;
 }
 .book {
-  padding: 10rem 0;
+  padding: 0rem 2rem;
   max-width: 400px;
   margin: 5rem 2rem 5rem 7rem;
   grid-area: book;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   color: black;
 }
