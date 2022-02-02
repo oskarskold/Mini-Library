@@ -1,20 +1,26 @@
 <template>
   <div class="library">
     <h1>8 Classic Childrens books</h1>
-    <Book
-      class="book"
+    <router-link
       v-for="(data, index) in books"
       :key="index"
-      :book="data"
-    />
+      :to="'/SingleBook/' + data.Productid"
+    >
+      <Book class="book" :book="data" />
+    </router-link>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import books from "../ChildrensBooks.json";
 import Book from "../components/Book.vue";
 export default {
-  props: ["books"],
+  props: ["book"],
+  data() {
+    return {
+      books: [...books],
+    };
+  },
   name: "Library",
   components: { Book },
 };
@@ -30,8 +36,7 @@ h1 {
   grid-column: 1/5;
 }
 .book {
-  min-width: 150px;
-  min-height: 220px;
+  width: 160px;
   border-left: 6px solid rgb(5, 5, 5);
   height: 220px;
   display: flex;

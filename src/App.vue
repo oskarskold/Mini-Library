@@ -1,19 +1,18 @@
 <template>
   <div id="app">
     <router-view :books="books" />
-    <router-link :to="{ name: 'SingleBook' }"> </router-link>
   </div>
 </template>
 
 <script>
-import books from "./ChildrensBooks.json";
-
+import ChildrensBooks from "./ChildrensBooks.json";
 export default {
   data() {
     return {
-      books: books,
+      books: [...ChildrensBooks],
     };
   },
+  methods: {},
 };
 </script>
 

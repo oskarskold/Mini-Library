@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/SingleBook",
+    path: "/SingleBook/:id",
     name: "SingleBook",
     component: SingleBook,
   },
