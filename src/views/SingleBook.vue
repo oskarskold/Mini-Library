@@ -5,7 +5,9 @@
         arrow_circle_left
       </span></router-link
     >
-    <Book class="book" v-if="data" :book="data">{{ data }} </Book>
+    <Book class="book" v-if="data" :book="data">
+      {{ data }}
+    </Book>
     <BookInfo class="book-info" v-if="data" :book="data" />
   </div>
 </template>
@@ -52,15 +54,24 @@ input[type="reset"] {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr 5fr;
   grid-template-areas: "back back" "book book-info";
-  background-color: black;
+  background-color: #222222;
   color: white;
 }
 .back {
   grid-area: back;
 }
 .book {
+  padding: 10rem 0;
+  max-width: 400px;
+  margin: 5rem 2rem 5rem 7rem;
   grid-area: book;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  color: black;
 }
+
 .bookInfo {
   grid-area: book-info;
 }
