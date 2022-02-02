@@ -8,12 +8,7 @@
     <Book class="book" v-if="book" :book="book">
       {{ book }}
     </Book>
-    <BookInfo
-      class="book-info"
-      v-if="book"
-      :book="book"
-      :readingList="readingList"
-    />
+    <BookInfo class="book-info" v-if="book" :book="book" />
   </div>
 </template>
 
@@ -23,11 +18,7 @@ import BookInfo from "../components/BookInfo.vue";
 import ChildrensBooks from "../ChildrensBooks.json";
 export default {
   components: { Book, BookInfo },
-  data() {
-    return {
-      readingList: [],
-    };
-  },
+
   computed: {
     book() {
       return ChildrensBooks.find(

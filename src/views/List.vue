@@ -6,15 +6,29 @@
       </span></router-link
     >
     <h1>Reading List</h1>
-    <ReadingList v-for="item of readingList" :key="item.Productid" />
+    <ReadingList
+      v-for="item of readingList"
+      :key="item.Productid"
+      :readingList="readingList"
+      @pushBook="addToReadingList"
+    />
   </div>
 </template>
 
 <script>
 import ReadingList from "../components/ReadingList.vue";
 export default {
-  props: ["readingList"],
   components: { ReadingList },
+  methods: {
+    addToReadingList(book) {
+      this.readingList.push(book);
+    },
+  },
+  data() {
+    return {
+      readingList: [],
+    };
+  },
 };
 </script>
 

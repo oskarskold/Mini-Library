@@ -9,7 +9,9 @@
       <p>Pages: {{ book.Pages }}</p>
       <p>Publisher: {{ book.Publisher }}</p>
     </div>
-    <router-link to="/List" tag="button">Oh, I want to read it!</router-link>
+    <router-link @click.native="$emit('pushBook', book)" to="/List" tag="button"
+      >Oh, I want to read it!</router-link
+    >
   </div>
 </template>
 
