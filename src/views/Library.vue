@@ -82,6 +82,7 @@ input[type="reset"] {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-gap: 1rem;
+  max-width: 1000px;
 }
 h1 {
   grid-column: 1/5;

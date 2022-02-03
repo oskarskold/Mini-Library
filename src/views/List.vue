@@ -52,5 +52,6 @@ h1 {
 .container {
   background: #222222;
   padding: 2rem;
+  max-width: 1000px;
 }
 </style>

@@ -53,6 +53,7 @@ input[type="reset"] {
   grid-template-areas: "back back" "book book-info";
   background-color: #222222;
   color: white;
+  max-width: 1000px;
 }
 .back {
   grid-area: back;
