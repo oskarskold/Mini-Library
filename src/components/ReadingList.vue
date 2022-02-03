@@ -11,7 +11,7 @@ export default {
   props: ["book"],
   methods: {
     removeFromReadingList() {
-      this.$store.commit("removeFromReadingList", this.book);
+      this.$store.dispatch("removeFromReadingList", this.book);
     },
   },
   computed: {

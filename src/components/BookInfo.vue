@@ -18,7 +18,7 @@ export default {
   props: ["book", "readingList"],
   methods: {
     addToReadingList() {
-      this.$store.commit("addToReadingList", this.book);
+      this.$store.dispatch("addToReadingList", this.book);
       this.$router.push("/List");
     },
   },

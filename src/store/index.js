@@ -11,10 +11,25 @@ export default new Vuex.Store({
     readingList: [],
     slide: 1,
   },
+
+  actions: {
+    increment(context){
+      context.commit('incrementSlide', context.slide);
+    },
+    decrement(context){
+      context.commit('decrementSlide', context.slide);
+    },
+    addToReadingList(context, payload){
+      context.commit('addToReadingList', payload);
+    },
+    removeFromReadingList(context, payload){
+      context.commit('removeFromReadingList', payload);
+    }  
+  },
   mutations: {
     incrementSlide(state) {
-      if (state.slide < 3) state.slide++;
-    },
+       if (state.slide < 3) state.slide++;
+     },
     decrementSlide(state) {
       if (state.slide > 1) state.slide--;
     },

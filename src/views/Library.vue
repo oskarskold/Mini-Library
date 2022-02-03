@@ -29,10 +29,10 @@ import Book from "../components/Book.vue";
 export default {
   methods: {
     incrementSlide() {
-      this.$store.commit("incrementSlide");
+      this.$store.dispatch("increment");
     },
     decrementSlide() {
-      this.$store.commit("decrementSlide");
+      this.$store.dispatch("decrement");
     },
   },
 
