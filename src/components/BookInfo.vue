@@ -64,4 +64,11 @@ p {
 .info p:nth-of-type(4) {
   grid-area: publisher;
 }
+button {
+  font-weight: 700;
+  border: none;
+  border-radius: 0.4rem;
+  margin: 2rem;
+  padding: 1rem 2rem;
+}
 </style>

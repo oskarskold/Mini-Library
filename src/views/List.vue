@@ -50,6 +50,9 @@ h1 {
   color: white;
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #222222;
   padding: 2rem;
   max-width: 1000px;

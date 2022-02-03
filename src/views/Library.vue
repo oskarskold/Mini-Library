@@ -62,6 +62,7 @@ span {
 p {
   margin-left: 2.3rem;
   color: black;
+  font-weight: 600;
 }
 
 button,
@@ -83,6 +84,8 @@ input[type="reset"] {
   grid-template-rows: auto;
   grid-gap: 1rem;
   max-width: 1000px;
+  padding: 1rem;
+  background: rgba(110, 123, 151, 0.644);
 }
 h1 {
   grid-column: 1/5;

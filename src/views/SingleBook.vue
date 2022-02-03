@@ -5,9 +5,7 @@
         arrow_circle_left
       </span></router-link
     >
-    <Book class="book" v-if="book" :book="book">
-      {{ book }}
-    </Book>
+    <Book class="book" v-if="book" :book="book"> </Book>
     <BookInfo class="book-info" v-if="book" :book="book" />
   </div>
 </template>
@@ -68,6 +66,9 @@ input[type="reset"] {
   align-items: flex-start;
   justify-content: flex-end;
   color: black;
+}
+.book > h2 {
+  font-size: 4rem;
 }
 
 .bookInfo {

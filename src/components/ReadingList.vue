@@ -1,8 +1,10 @@
 <template>
   <div class="readingList">
-    <h2>{{ book.Title }}</h2>
-    <p>{{ book.Author }}</p>
-    <button @click="removeFromReadingList">remove</button>
+    <div class="underline">
+      <h2>{{ book.Title }}</h2>
+      <p>{{ book.Author }}</p>
+      <button @click="removeFromReadingList">Remove</button>
+    </div>
   </div>
 </template>
 
@@ -25,8 +27,13 @@ export default {
 <style scoped>
 .readingList {
   background: #2f2f2f;
+  min-width: 500px;
+  padding: 1rem;
 }
-.readingList > h2,
+.underline {
+  border-bottom: 1px solid grey;
+}
+.underline > h2,
 p {
   color: white;
 }
