@@ -1,19 +1,11 @@
 <template>
   <div id="app">
-    <router-view :books="books" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import ChildrensBooks from "./ChildrensBooks.json";
-export default {
-  data() {
-    return {
-      books: [...ChildrensBooks],
-    };
-  },
-  methods: {},
-};
+export default {};
 </script>
 
 <style lang="scss">

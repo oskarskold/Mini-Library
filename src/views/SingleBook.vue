@@ -15,15 +15,11 @@
 <script>
 import Book from "../components/Book.vue";
 import BookInfo from "../components/BookInfo.vue";
-import ChildrensBooks from "../ChildrensBooks.json";
 export default {
   components: { Book, BookInfo },
-
   computed: {
     book() {
-      return ChildrensBooks.find(
-        (data) => data.Productid == this.$route.params.id
-      );
+      return this.$store.getters.book(this.$route.params.id);
     },
   },
 };

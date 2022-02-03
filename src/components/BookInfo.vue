@@ -9,15 +9,19 @@
       <p>Pages: {{ book.Pages }}</p>
       <p>Publisher: {{ book.Publisher }}</p>
     </div>
-    <router-link @click.native="$emit('pushBook', book)" to="/List" tag="button"
-      >Oh, I want to read it!</router-link
-    >
+    <button @click="addToReadingList">Oh, I want to read it!</button>
   </div>
 </template>
 
 <script>
 export default {
   props: ["book", "readingList"],
+  methods: {
+    addToReadingList() {
+      this.$store.commit("addToReadingList", this.book);
+      this.$router.push("/List");
+    },
+  },
 };
 </script>
 
@@ -59,12 +63,5 @@ p {
 }
 .info p:nth-of-type(4) {
   grid-area: publisher;
-}
-button {
-  font-weight: 600;
-  padding: 1rem 2rem;
-  border-radius: 4px;
-  border: none;
-  margin: 1rem;
 }
 </style>

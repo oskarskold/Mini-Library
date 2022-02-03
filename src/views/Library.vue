@@ -25,36 +25,30 @@
 </template>
 
 <script>
-import books from "../ChildrensBooks.json";
 import Book from "../components/Book.vue";
 export default {
-  props: ["book"],
-  data() {
-    return {
-      slide: 1,
-      books: [...books],
-    };
-  },
-  computed: {
-    listOfBooks() {
-      return books.filter((data) => {
-        if (data.Slide == this.slide) {
-          return data;
-        }
-      });
-    },
-  },
   methods: {
     incrementSlide() {
-      if (this.slide < 3) this.slide++;
+      this.$store.commit("incrementSlide");
     },
     decrementSlide() {
-      if (this.slide > 1) this.slide--;
+      this.$store.commit("decrementSlide");
     },
   },
 
   name: "Library",
   components: { Book },
+  computed: {
+    listOfBooks() {
+      return this.$store.getters.listOfBooks;
+    },
+    slide() {
+      return this.$store.state.slide;
+    },
+    book() {
+      return this.$store.getters.book;
+    },
+  },
 };
 </script>
 
